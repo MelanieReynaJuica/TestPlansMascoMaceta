@@ -1,0 +1,52 @@
+@model List<Producto>
+
+@{  
+ViewBag.Title = "Lista de productos";  
+} 
+<h2 id="tittle">Inventario</h2>
+
+    <hr>
+    <div class="container">
+      <div class="row">
+        
+        @if( Model!=null){
+        @foreach (var item in Model){
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th width="300" height="300">
+                                <img src="~/img/item.jpg" id="imagen">
+                            </th>
+                            <th>
+                                  
+                                <div class="item-text">
+                                    <h3>Producto @item.codigo</h3>
+                                                                              
+                                        <br>
+                                       
+                                        Propietario: @item.AlumnoID
+                                    
+                                     <br>
+                                     Estado: @item.estado
+                                     <br>
+                                     Fecha: @item.fecha
+
+                                 <div class="item-text"> <div class="dropdown" >
+                                    <a class="dropdown-toggle"  data-toggle="dropdown"> más</a>
+                                        <ul class="dropdown-menu">
+                                          <li><a asp-controller="Producto" asp-action="Registrar">&#x2541; Agregar</a></li>
+                                      
+                                          <li><a asp-action="Delete" asp-controller="Producto" asp-route-codigo="@item.codigo"> Eliminar </a></li>
+                                        </ul>
+                                
+                            </th>
+                            <th>
+                                 
+                            </th>
+                        </tr>
+                    </table>        
+                </div>
+        }       
+        }
+      </div>
+      </div>

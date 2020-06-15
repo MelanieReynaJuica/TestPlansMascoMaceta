@@ -1,0 +1,41 @@
+
+@model List<Alumno>
+
+@{  
+ViewBag.Title = "Lista de alumnos";  
+}  
+
+<h2 id="tittle">Alumnos</h2>
+
+    <hr>
+    <div class="container">
+      <div class="row">
+        
+                
+          @if(Model!=null){
+                @foreach (var item in Model){
+		    
+             <div class="col-md-4">
+                    <table class="table">
+                        <tr>
+                            <th width="100" height="100">
+                                <img src="~/img/item2.jpg" id="imagen">
+                            </th>
+                            </tr><tr>
+                            <th>
+                                <div class="item-text">
+                                    <h3>@item.nombre @item.apePat @item.apeMat</h3>
+                                     
+
+                                     <a asp-route-id="@item.id">Detalles</a>
+                                </div>
+                            </th>
+                        </tr>
+                    </table>        
+                </div>
+
+                }
+          }
+      </div>
+
+    </div>

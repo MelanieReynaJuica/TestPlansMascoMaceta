@@ -1,0 +1,92 @@
+﻿@model Usuarios;
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{  
+ViewBag.Title = "Inicio sesión";  
+}  
+@{
+    Layout="_Layout2";
+}  
+
+
+<html lang="es">
+<head>
+    <title>Inicio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="~/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style type="text/css">
+    	 body{
+                text-align: center;
+                color: white;
+                background-image: url("../img/fondo.jpg");
+                 padding: 5px;
+                 font-size: 18px;
+                 background-attachment: fixed;
+				 background-position: center center;
+				 background-repeat: no-repeat;
+				background-size: cover;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+            }
+           .form-container{
+			    color: #fff;
+			    padding: 20px;
+			    border-radius: 5px;
+			    background-color: rgba(50,64,77,.90);
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    -moz-transform: translate(-50%, -50%);
+			    -webkit-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			}
+			input{
+				width: 300px;
+				height: 40px;
+			}
+			button{
+				margin-top: 50px;
+			}
+
+    </style>
+   
+</head>
+<body>
+
+	<div class="form-container">
+        <p class="text-center" style="margin-top: 17px;font-size: 80px; margin-bottom: 0px;">
+        	
+           <i class="zmdi zmdi-flower-alt mdc-text-green"></i>
+       </p>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">Inicia sesión</h4>
+
+            <div class="text-center all-tittles" style="margin-bottom: 30px; ">
+                <span>@ViewBag.msg</span>
+                </div>
+       <form method="post" asp-controller="Home" asp-action="Index">
+            <div class="group-material-login">
+                
+              <input type="text" class="material-login-control" asp-for="correo" required="" maxlength="70" placeholder="&#128100;  Usuario">
+             
+            </div><br>
+            <div class="group-material-login">
+              <input type="password" class="material-login-control" asp-for="contrasena" required="" maxlength="70" placeholder="&#x26bf; Contraseña">
+             
+            </div>
+           
+            <button class="btn btn-light" type="submit"  >Entrar &nbsp; </button>
+
+            
+        </form>
+    </div>  
+
+	   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+</body>
+</html>

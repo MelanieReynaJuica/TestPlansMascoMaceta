@@ -1,0 +1,72 @@
+@model Alumno   
+   
+<h3 id="tittle">Registrar Alumno</h3><hr>
+<div class="form1">
+                
+               
+ 
+   
+    <div asp-validation-summary="All"></div>
+
+    <form  method="post" asp-controller="Alumno" asp-action="Registrar">
+            
+            <div >
+                <label  ><b>DNI</b></label>
+                <input type="text"  asp-for="id" class="control "  data-toggle="tooltip" data-placement="top" placeholder="Ingreso el DNI" required>
+            <label></label>
+            <br><br>
+            </div> 
+            <div >
+                <label  ><b>Nombre</b></label>
+                <input type="text"  asp-for="nombre" class="control " pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{2,30}" data-toggle="tooltip" data-placement="top" placeholder="Ingreso el nombre" required>
+            <label></label>
+            <br><br>
+            </div> 
+
+            <div >
+                <label for="lastname"><b>Apellido Paterno</b></label>
+                <input type="text" class="control  tooltips-general" asp-for="apePat" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,30}" placeholder="Ingrese Apellido" data-toggle="tooltip" data-placement="top" required >
+                <label></label>
+            <br><br>
+            </div> 
+            <div >
+                <label><b>Apellida Materno</b></label>
+                <input type="text" class="control" asp-for="apeMat" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,30}" data-toggle="tooltip" data-placement="top" placeholder="Ingrese apellido" >
+                <label></label>
+                <br><br>
+            </div> 
+
+            <div>
+            <label ><b>Fecha</b></label>
+                <input class="control" type="date"  asp-for="fecNac" required>
+                <label></label>
+            <br><br>
+            </div> 
+
+            <div >
+                <label for="email"><b>Correo electrónico</b></label>
+                <input type="email" class="control" maxlength="50" placeholder="Ingrese correo " asp-for="correo" required>
+            <label></label>
+            <br><br>
+            </div> 
+             <div >
+                <label for="pwd"><b>Contraseña</b></label>
+                <input type="password" class="control" maxlength="50" placeholder="Ingrese contraseña" asp-for="contrasena" required>
+            <label></label>
+            <br><br>
+            </div> 
+
+            <div>
+                <label><b>Teléfono</b></label>
+                <input type="number" class="control" minlength="9" maxlength="15" placeholder="Ingrese teléfono" asp-for="telefono" required>
+            <label></label>
+            <br><br>
+            </div>
+
+    
+    
+
+             <input type="submit" class="btn btn-success" id="btnRegister"  value="Registrar">
+    </form>
+
+</div>
